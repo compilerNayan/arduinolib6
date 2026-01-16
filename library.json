@@ -1,0 +1,23 @@
+{
+  "name": "arduinolib6",
+  "version": "1.0.0",
+  "description": "A header-only PlatformIO library that depends on springbootplusplus-web (arduinolib2)",
+  "keywords": "arduino, utility",
+  "authors": [
+    {
+      "name": "Nayan"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/compilerNayan/arduinolib6.git"
+  },
+  "dependencies": {
+    "springbootplusplus-web": "https://github.com/compilerNayan/arduinolib2.git"
+  },
+  "license": "MIT",
+  "homepage": "",
+  "frameworks": "arduino",
+  "platforms": "*"
+}
+
