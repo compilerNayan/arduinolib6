@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.14)
-project(arduinolib6 VERSION 1.0.0 LANGUAGES CXX)
+project(cpp-logger VERSION 1.0.0 LANGUAGES CXX)
 
 # Set C++ standard
 set(CMAKE_CXX_STANDARD 17)
@@ -19,15 +19,15 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(springbootplusplus-web)
 
 # Create header-only library (INTERFACE library)
-add_library(arduinolib6 INTERFACE)
+add_library(cpp-logger INTERFACE)
 
 # Set target properties
-set_target_properties(arduinolib6 PROPERTIES
+set_target_properties(cpp-logger PROPERTIES
     VERSION ${PROJECT_VERSION}
 )
 
-# Set include directories for arduinolib6's own headers (in src directory)
-target_include_directories(arduinolib6 INTERFACE
+# Set include directories for cpp-logger's own headers (in src directory)
+target_include_directories(cpp-logger INTERFACE
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/src>
     $<INSTALL_INTERFACE:include>
 )
@@ -35,14 +35,14 @@ target_include_directories(arduinolib6 INTERFACE
 # Link to springbootplusplus-web (arduinolib2)
 # Try the namespaced target first, fallback to non-namespaced
 if(TARGET springbootplusplus-web::springbootplusplus-web)
-    target_link_libraries(arduinolib6 INTERFACE springbootplusplus-web::springbootplusplus-web)
+    target_link_libraries(cpp-logger INTERFACE springbootplusplus-web::springbootplusplus-web)
 elseif(TARGET springbootplusplus-web)
-    target_link_libraries(arduinolib6 INTERFACE springbootplusplus-web)
+    target_link_libraries(cpp-logger INTERFACE springbootplusplus-web)
 else()
     # Fallback: manually add include directory if target doesn't exist
     FetchContent_GetProperties(springbootplusplus-web)
     if(springbootplusplus-web_SOURCE_DIR)
-        target_include_directories(arduinolib6 INTERFACE
+        target_include_directories(cpp-logger INTERFACE
             $<BUILD_INTERFACE:${springbootplusplus-web_SOURCE_DIR}/src>
         )
     endif()

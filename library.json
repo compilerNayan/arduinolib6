@@ -1,8 +1,8 @@
 {
-  "name": "arduinolib6",
+  "name": "cpp-logger",
   "version": "1.0.0",
   "description": "A header-only PlatformIO library that depends on springbootplusplus-web (arduinolib2)",
-  "keywords": "arduino, utility",
+  "keywords": "arduino, utility, logging",
   "authors": [
     {
       "name": "Nayan"
