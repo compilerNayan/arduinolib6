@@ -8,7 +8,7 @@
 
 /* @Component */
 class DesktopLogSink final : public ILogSink {
-    Public:
+    Public
         DesktopLogSink() = default;
         
         Public Virtual ~DesktopLogSink() override = default;

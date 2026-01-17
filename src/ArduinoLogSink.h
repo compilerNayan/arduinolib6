@@ -8,7 +8,7 @@
 
 /* @Component */
 class ArduinoLogSink final : public ILogSink {
-    Public:
+    Public
         ArduinoLogSink() = default;
         
         Public Virtual ~ArduinoLogSink() override = default;
