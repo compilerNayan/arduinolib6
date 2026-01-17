@@ -16,21 +16,6 @@ class ArduinoLogSink final : public ILogSink {
         Public Virtual Void WriteLog(CStdString& message) override {
             Serial.println(message.c_str());
         }
-
-        public: static ILogSinkPtr GetInstance() {
-            static ILogSinkPtr instance(new ArduinoLogSink());
-            return instance;
-        }
-};
-
-template <>
-struct Implementation<ILogSink> {
-    using type = ArduinoLogSink;
-};
-
-template <>
-struct Implementation<ILogSink*> {
-    using type = ArduinoLogSink*;
 };
 
 #endif // ARDUINO_LOGSINK_H
