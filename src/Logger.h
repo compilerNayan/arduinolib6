@@ -110,7 +110,7 @@ class Logger final : public ILogger {
         return static_cast<Int>(level) >= static_cast<Int>(currentLogLevel);
     }
     
-    Private Void WriteLog(CLogLevel level, CTag tag1, CTag tag2, CStdString& message, CStdString& functionName) const {
+    Private Void WriteLog(CLogLevel level, CTag /* tag1 */, CTag /* tag2 */, CStdString& message, CStdString& functionName) const {
         StdString output;
         
         // Add function name
